@@ -10,14 +10,14 @@ public Army(String name, FootSoldier footSoldiers) {
 }
 
 public String name() { return name; }
-public FootSoldier footSoldiers() { return footSoldiers; }
+public FootSoldier getFootSoldiers() { return footSoldiers; }
 
 public int getArmyAttack() {
-    return footSoldiers.nbUnits() * footSoldiers.attack();
+    return footSoldiers.getNbUnits() * footSoldiers.getAttack();
 }
 
 public int getArmyDefense() {
-    return footSoldiers.nbUnits() * footSoldiers.defense();
+    return footSoldiers.getNbUnits() * footSoldiers.getDefense();
 }
 
 

@@ -27,7 +27,7 @@ public class Clan {
 
     // Méthode pour vérifier si le clan a encore des armées restantes
     public boolean hasRemainingArmies() {
-        return armies.stream().anyMatch(army -> army.footSoldiers().nbUnits() > 0);
+        return armies.stream().anyMatch(army -> army.getFootSoldiers().getNbUnits() > 0);
     }
 
     // Optionnel : Méthode pour ajouter une armée
