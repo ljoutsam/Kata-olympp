@@ -61,7 +61,7 @@ class BattleServiceTest {
 
         // Assertions pour vérifier le résultat de la bataille
         assertNotNull(report, "Le rapport de bataille ne doit pas être nul");
-        assertNull(report.winner(), "Le vainqueur doit être nul en cas de match nul");
-        assertEquals("DRAW", report.status(), "Le statut de la bataille doit être MATCH NUL");
+        assertNull(report.getWinner(), "Le vainqueur doit être nul en cas de match nul");
+        assertEquals("DRAW", report.getStatus(), "Le statut de la bataille doit être MATCH NUL");
     }
 }
