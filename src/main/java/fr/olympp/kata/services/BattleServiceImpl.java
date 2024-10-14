@@ -11,8 +11,8 @@ public class BattleServiceImpl implements BattleService{
     @Override
     public BattleReport battle(Clan clan1, Clan clan2) {
         List<BattleTurn> history = new ArrayList<>();
-        List<Army> armies1 = new ArrayList<>(clan1.armies());
-        List<Army> armies2 = new ArrayList<>(clan2.armies());
+        List<Army> armies1 = new ArrayList<>(clan1.getArmies());
+        List<Army> armies2 = new ArrayList<>(clan2.getArmies());
 
         while (!armies1.isEmpty() && !armies2.isEmpty()) {
             //On recupere 1 armee par clan pour les opposées
@@ -48,7 +48,7 @@ public class BattleServiceImpl implements BattleService{
             }
         }
 
-        String winner = armies1.isEmpty() ? clan2.name() : armies2.isEmpty() ? clan1.name() : null;
+        String winner = armies1.isEmpty() ? clan2.getName() : armies2.isEmpty() ? clan1.getName() : null;
         String status = winner == null ? "DRAW" : "WIN";
         return new BattleReport(status, winner, List.of(clan1, clan2), history);
     }
